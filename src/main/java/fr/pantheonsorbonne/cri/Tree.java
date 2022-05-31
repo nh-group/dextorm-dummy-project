@@ -1,7 +1,6 @@
 package fr.pantheonsorbonne.cri;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Tree {
 
@@ -37,5 +36,20 @@ public class Tree {
 
     public boolean hasApples() {
         return this.apples.size() > 0;
+    }
+
+    public Set<Apple> shakeTree() {
+        LinkedList<Apple> apples = new LinkedList<>(this.apples);
+        Set<Apple> res = new HashSet<>();
+        Collections.shuffle(apples);
+        Random random = new Random();
+        int fallingApples = random.nextInt(apples.size());
+        for (int i = 0; i <= fallingApples; i++) {
+            res.add(apples.poll());
+        }
+        this.apples.removeAll(res);
+        return res;
+
+
     }
 }

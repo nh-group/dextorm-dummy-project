@@ -5,14 +5,18 @@ import java.util.Objects;
 public class Apple {
     public static final String DEFAULT_COLOUR = "RED";
     public static final int DEFAULT_RADIUS = 5;
+    private static int appleCount = 0;
     final String colour;
+    private final int id;
     int radius;
+
 
     public Apple() {
         this(DEFAULT_COLOUR, DEFAULT_RADIUS);
     }
 
     public Apple(String colour, int radius) {
+        this.id = appleCount++;
         this.colour = colour;
         this.radius = radius;
     }
@@ -27,7 +31,7 @@ public class Apple {
         if (this == o) return true;
         if (!(o instanceof Apple)) return false;
         Apple apple = (Apple) o;
-        return getRadius() == apple.getRadius() && Objects.equals(getColour(), apple.getColour());
+        return id == apple.id && getRadius() == apple.getRadius() && Objects.equals(getColour(), apple.getColour());
     }
 
     public String getColour() {

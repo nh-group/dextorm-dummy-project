@@ -13,22 +13,23 @@ public class Tree {
     }
 
     public Apple pickApple() {
-        if (!this.apples.isEmpty()) {
-            Apple res = this.apples.iterator().next();
+        //check if the apples are empty or not
+        if (!this.apples.isEmpty()) { //if there is some apple on the tree
+            Apple res = this.apples.iterator().next(); //get the first one (not assumptoin on the order)
             this.apples.remove(res);
             return res;
         }
-        return null;
+        return null;// if something goes bad
 
     }
 
     public void eatAllApplesOnTheTree() {
-        for (Apple apple : this.apples) {
+        for (Apple apple : this.apples) { //loop on all the apples
             try {
                 while (true) {
-                    apple.takeABite();
+                    apple.takeABite(); // this will reduce the radius of the apple
                 }
-            } catch (TrognonException t) {
+            } catch (TrognonException t) { // this is where the exception is caught
                 //we reached the trognon, stop eating!
             }
         }

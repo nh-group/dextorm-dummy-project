@@ -10,6 +10,6 @@ public class ContactServiceTest {
     public void shouldFindContactWithNumber()
     {
         Contact contact = service.findContactWithPhoneNumber("0655526");
-        assertTrue(contact != null );
+        assertTrue(contact == null );
     }
 }

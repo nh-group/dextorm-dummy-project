@@ -1,4 +1,4 @@
-package fr.pantheonsorbonne.cri;
+package fr.pantheonsorbonne.ufr27.cri;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

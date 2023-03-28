@@ -1,4 +1,4 @@
-package fr.pantheonsorbonne.cri;
+package fr.pantheonsorbonne.ufr27.cri;
 
 public class Contact {
     private String name;
